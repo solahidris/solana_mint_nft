@@ -14,7 +14,7 @@
 
 const SolanaTest = () => {
     <div>
-        <p>Solana Test Page</p>
+        <p className="">Solana Test Page</p>
     </div>
 }
 

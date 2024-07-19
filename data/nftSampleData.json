@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1000001,
+        "tokenName": "PENG",
+        "baseImagePath": "/nft/nftsampleimage1.png"
+    },
+    {
+        "id": 1000002,
+        "tokenName": "SLERF",
+        "baseImagePath": "/nft/nftsampleimage2.png"
+    },
+    {
+        "id": 1000003,
+        "tokenName": "WIF",
+        "baseImagePath": "/nft/nftsampleimage3.png"
+    },
+    {
+        "id": 1000004,
+        "tokenName": "RETARDIO",
+        "baseImagePath": "/nft/nftsampleimage4.png"
+    }
+]
