@@ -7,7 +7,20 @@ const config = {
     './components/**/*.{js,ts,jsx,tsx}',
     './app/**/*.{ts,tsx,js,jsx}',
     './src/**/*.{ts,tsx,js,jsx}',
+    './data/**/*.{json}',
 	],
+  safelist: [
+    'bg-red-200',
+    'bg-yellow-200',
+    'bg-green-200',
+    'bg-sky-200',
+    'bg-violet-200',
+    'bg-red-400',
+    'bg-yellow-400',
+    'bg-green-400',
+    'bg-sky-400',
+    'bg-violet-400',
+  ],
   prefix: "",
   theme: {
     container: {
