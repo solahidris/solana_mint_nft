@@ -4,12 +4,16 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Button } from "./ui/button";
 import { ChevronLeft } from "lucide-react";
+import ChooseItemCarousel from "./chooseItemCarousel";
+import backgroundColorSample from "@/data/backgroundColorSample.json"
+import backgroundColorSample2 from "@/data/backgroundColorSample2.json"
+
 
 const MintingPageContent = () => {
 
     const router = useRouter();
     const tokenNamePath = router.asPath.substring(1); // Get tokenName by path without "/"
-    console.log("tokenNamePath:", tokenNamePath)
+    // console.log("tokenNamePath:", tokenNamePath)
 
     return (
         <main className="flex flex-col items-center p-6 min-h-screen font-rubik text-lg">
@@ -27,10 +31,22 @@ const MintingPageContent = () => {
                             <div key={index} className="flex flex-col gap-4">
                                 <Image src={card.baseImagePath} alt={card.baseImagePath} width={140} height={140}
                                     className="rounded-xl w-full shadow" />
-                                <Link href={`/${card.tokenName}`}><Button className="hover:cursor-pointer bg-gray-200 hover:bg-gray-300 text-lg py-6 w-full rounded-xl text-center text-black font-medium">GENERATE RANDOMLY</Button></Link>
+                                <Link href={`/${card.tokenName}`}><Button className="bg-gray-200 hover:bg-gray-300 text-lg py-8 w-full rounded-xl text-center text-black font-medium">GENERATE RANDOMLY</Button></Link>
                                 <div className="grid grid-cols-2 gap-5 w-full">
-                                    <Button className="hover:cursor-pointer bg-gray-200 hover:bg-gray-300 text-lg py-6 rounded-xl text-center font-medium text-black">MINT</Button>
-                                    <Button className="hover:cursor-pointer bg-gray-200 hover:bg-gray-300 text-lg py-6 rounded-xl text-center font-medium text-black">DOWNLOAD</Button>
+                                    <Button className="bg-gray-200 hover:bg-gray-300 text-lg py-8 rounded-xl text-center font-medium text-black">MINT</Button>
+                                    <Button className="bg-gray-200 hover:bg-gray-300 text-lg py-8 rounded-xl text-center font-medium text-black">DOWNLOAD</Button>
+                                </div>
+                                <div className="bg-gray-100 rounded-xl p-4">
+                                    <p className="text-base font-medium py-2 text-center">CREATE YOUR PFP</p>
+                                    <p className="text-base font-medium py-4">BACKGROUND</p>
+                                    {/* <ChooseItemCarousel data={backgroundColorSample} /> */}
+                                    <ChooseItemCarousel />
+                                    <p className="text-base font-medium py-4">BASE</p>
+                                    {/* <ChooseItemCarousel data={backgroundColorSample2} /> */}
+                                    <p className="text-base font-medium py-4">EYES</p>
+                                    {/* <ChooseItemCarousel data={backgroundColorSample2} /> */}
+                                    <p className="text-base font-medium py-4">HEAD</p>
+                                    {/* <ChooseItemCarousel data={backgroundColorSample2} /> */}
                                 </div>
                             </div>
                         ))}
