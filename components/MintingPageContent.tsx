@@ -8,12 +8,12 @@ import ChooseItemCarousel from "./ChooseItemCarousel";
 import backgroundColorSample from "@/data/backgroundColorSample.json"
 import backgroundColorSample2 from "@/data/backgroundColorSample2.json"
 import { useState } from "react";
+import { downloadDivAsImage } from "@/functions/downloadDivAsImage";
 
 const MintingPageContent = () => {
 
     const router = useRouter();
-    const tokenNamePath = router.asPath.substring(1); // Get tokenName by path without "/"
-    // console.log("tokenNamePath:", tokenNamePath)
+    const tokenNamePath = router.asPath.substring(1); // Get tokenName by path without "/" for render which NFT
     const [backgroundColor, setBackgroundColor] = useState("test");
 
 
@@ -33,14 +33,14 @@ const MintingPageContent = () => {
                             <div key={index} className="flex flex-col lg:flex-row gap-4">
                                 
                                 <div className="flex flex-col gap-4 ">
-                                    <div className={`${backgroundColor} rounded-xl shadow max-w-[320px]`}>
+                                    <div id={`div-to-download-${index}`} className={`${backgroundColor} rounded-xl shadow max-w-[320px]`}>
                                         <Image src={card.baseImagePath} alt={card.baseImagePath} width={140} height={140}
                                         className="w-full" />
                                     </div>
                                     <Link href={`/${card.tokenName}`}><Button className="bg-gray-200 hover:bg-gray-300 text-lg py-8 w-full rounded-xl text-center text-black font-medium">GENERATE RANDOMLY</Button></Link>
                                     <div className="grid grid-cols-2 gap-5 w-full">
                                         <Button className="bg-gray-200 hover:bg-gray-300 text-lg py-8 rounded-xl text-center font-medium text-black">MINT</Button>
-                                        <Button className="bg-gray-200 hover:bg-gray-300 text-lg py-8 rounded-xl text-center font-medium text-black">DOWNLOAD</Button>
+                                        <Button onClick={() => downloadDivAsImage(`div-to-download-${index}`)} className="bg-gray-200 hover:bg-gray-300 text-lg py-8 rounded-xl text-center font-medium text-black">DOWNLOAD</Button>
                                     </div>
                                 </div>
                                 
